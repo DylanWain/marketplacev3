@@ -562,14 +562,16 @@ const DynamicMarketplacePage: React.FC<DynamicPageProps> = ({
       metaDescription,
       keywords: keywords.join(", "),
       longFormContent,
-      canonical: buildCanonicalURL({
-        city: city || '',
-        state: state || '',
-        category: category || '',
-        neighborhood: neighborhood || '',
-        zipCode: zipCode || '',
-        searchQuery: searchQuery || '',
-      }),
+canonical: city && state 
+        ? buildCanonicalURL({
+            city,
+            state,
+            category: category || '',
+            neighborhood: neighborhood || '',
+            zipCode: zipCode || '',
+            searchQuery: searchQuery || '',
+          })
+        : 'https://dibbytour.com',
     };
   }, [city, state, category, neighborhood, zipCode, searchQuery]);
 
