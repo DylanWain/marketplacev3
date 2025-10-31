@@ -118,6 +118,12 @@ function parseURL(path: string): RouteParams | null {
 // 🎯 CUSTOM 404 PAGE - CORRECTED JSX
 // ============================================
 
+interface Custom404PageProps {
+  setCurrentPage: (page: string) => void;
+  setActiveView: (view: string) => void;
+  setIs404: (is404: boolean) => void;
+}
+
 const Custom404Page: React.FC<Custom404PageProps> = ({
   setCurrentPage,
   setActiveView,
@@ -381,7 +387,6 @@ const Custom404Page: React.FC<Custom404PageProps> = ({
     </div>
   );
 };
-
 // ============================================
 // 🌟 NUCLEAR SEO DYNAMIC MARKETPLACE TEMPLATE
 // Optimized for 7M+ URLs with MAX ranking power
