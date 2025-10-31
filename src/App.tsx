@@ -562,7 +562,7 @@ const DynamicMarketplacePage: React.FC<DynamicPageProps> = ({
       metaDescription,
       keywords: keywords.join(", "),
       longFormContent,
-canonical: city && state 
+      canonical: (city && state) 
         ? buildCanonicalURL({
             city,
             state,
